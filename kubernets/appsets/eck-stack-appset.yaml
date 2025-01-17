@@ -1,0 +1,45 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: eck-stack-appset
+spec:
+  generators:
+    # Generator for apps that should deploy to all clusters.
+    - matrix:
+        generators:
+          - clusters: {}
+          - list:
+              elements:
+                - appName: eck-operator
+                  namespace: elastic-system
+                  path: kubernetes/apps/eck-operator
+                  type: helm
+                - appName: eck-stack
+                  namespace: elastic-stack
+                  path: kubernetes/apps/eck-stack
+                  type: helm
+
+  template:
+    metadata:
+      name: "{{appName}}"
+      annotations:
+        argocd.argoproj.io/manifest-generate-paths: ".;.."
+    spec:
+      project: monitoring-stack
+      source:
+        repoURL: git@github.com:raphaelmulenda/monitoring-stack.git
+        targetRevision: HEAD
+        path: "{{path}}"
+        helm:
+          releaseName: "{{appName}}"
+          valueFiles:
+            - values.yaml
+      destination:
+        name: "{{name}}"
+        namespace: "{{namespace}}"
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+          - CreateNamespace=true
