@@ -1,6 +1,6 @@
 argocd-apps:
   projects:
-    monitoring-stack:
+    kube-infra-stack:
       namespace: argocd
       sourceRepos:
         - '*'
@@ -14,7 +14,7 @@ argocd-apps:
         warn: false
 
   applications:
-    monitoring-stack-root-app:
+    kube-infra-stack-root-app:
       namespace: argocd
       project: kube-infra-stack
       source:
