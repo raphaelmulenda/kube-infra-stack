@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: eck-stack-appset
+  name: ceph-sci-appset
 spec:
   generators:
     # Generator for apps that should deploy to all clusters.
@@ -10,14 +10,11 @@ spec:
           - clusters: {}
           - list:
               elements:
-                - appName: eck-operator
-                  namespace: elastic-system
-                  path: kubernetes/apps/eck-operator
+                - appName: ceph-sci
+                  namespace: ceph-csi-rbd
+                  path: kubernetes/apps/ceph/ceph-csi/charts/ceph-csi-rbd
                   type: helm
-                - appName: eck-stack
-                  namespace: elastic-stack
-                  path: kubernetes/apps/eck-stack
-                  type: helm
+
 
   template:
     metadata:
@@ -25,9 +22,9 @@ spec:
       annotations:
         argocd.argoproj.io/manifest-generate-paths: ".;.."
     spec:
-      project: monitoring-stack
+      project: kube-infra-stack
       source:
-        repoURL: git@github.com:raphaelmulenda/monitoring-stack.git
+        repoURL: git@github.com:raphaelmulenda/kube-infra-stack.git
         targetRevision: HEAD
         path: "{{path}}"
         helm:

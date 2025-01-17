@@ -16,9 +16,9 @@ argocd-apps:
   applications:
     monitoring-stack-root-app:
       namespace: argocd
-      project: monitoring-stack
+      project: kube-infra-stack
       source:
-        repoURL: git@github.com:raphaelmulenda/monitoring-stack.git
+        repoURL: git@github.com:raphaelmulenda/kube-infra-stack.git
         targetRevision: HEAD
         path: kubernetes/argocd-mngr-app/
       destination:

@@ -1,12 +1,12 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: monitoring-stack-mngr-app
+  name: kube-infra-stack-mngr-app
   namespace: argocd
 spec:
-  project: monitoring-stack
+  project: kube-infra-stack
   source:
-    repoURL: git@github.com:raphaelmulenda/monitoring-stack.git
+    repoURL: git@github.com:raphaelmulenda/kube-infra-stack.git
     targetRevision: HEAD
     path: kubernetes/appsets
   destination:
