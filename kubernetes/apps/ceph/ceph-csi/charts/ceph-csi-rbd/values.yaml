@@ -364,7 +364,7 @@ topology:
 
 storageClass:
   # Specifies whether the storageclass should be created
-  create: true
+  create: false
   name: csi-rbd-sc
 
   # Annotations for the storage class
@@ -546,7 +546,7 @@ selinuxMount: true
 
 secret:
   # Specifies whether the secret should be created
-  create: false
+  create: true
   name: csi-rbd-secret
   annotations: {}
   # Key values correspond to a user name and its key, as defined in the
