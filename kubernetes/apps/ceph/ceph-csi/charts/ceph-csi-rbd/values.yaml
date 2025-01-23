@@ -364,7 +364,7 @@ topology:
 
 storageClass:
   # Specifies whether the storageclass should be created
-  create: false
+  create: true
   name: csi-rbd-sc
 
   # Annotations for the storage class
@@ -377,7 +377,7 @@ storageClass:
   # Should be unique across all Ceph clusters in use for provisioning,
   # cannot be greater than 36 bytes in length, and should remain immutable for
   # the lifetime of the StorageClass in use.
-  clusterID: <cluster-ID>
+  clusterID: "b9fb1ff1-112a-4b01-a048-c5e455bb186d"
 
   # (optional) If you want to use erasure coded pool with RBD, you need to
   # create two pools. one erasure coded and one replicated.
