@@ -364,7 +364,7 @@ topology:
 
 storageClass:
   # Specifies whether the storageclass should be created
-  create: false
+  create: true
   name: csi-rbd-sc
 
   # Annotations for the storage class
