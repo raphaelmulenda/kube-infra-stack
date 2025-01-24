@@ -552,8 +552,8 @@ secret:
   # Key values correspond to a user name and its key, as defined in the
   # ceph cluster. User ID should have required access to the 'pool'
   # specified in the storage class
-  userID: client.rmulenda
-  userKey: AQC6mIpn2ZnBAxAA8ctbzxikvagzDPX5Q57n0A==
+  userID: client.admin
+  userKey: AQDsyXFnfvL4KhAAjDSVfprGWu5kQGjB/SWL3g==
   # Encryption passphrase
   encryptionPassphrase: test_passphrase
 
