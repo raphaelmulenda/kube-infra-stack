@@ -1,9 +1,9 @@
 apiVersion: v2
 appVersion: 4.1.2
 dependencies:
-- name: openebs-crds
-  repository: ""
-  version: 4.1.2
+# - name: openebs-crds
+#   repository: ""
+#   version: 4.1.2
 - name: localpv-provisioner
   repository: https://openebs.github.io/dynamic-localpv-provisioner
   version: 4.1.2
