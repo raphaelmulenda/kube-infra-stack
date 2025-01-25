@@ -39,7 +39,7 @@ mayastor:
   localpv-provisioner:
     enabled: false
   crds:
-    enabled: true
+    enabled: false
 
 # -- Configuration options for pre-upgrade helm hook job.
 preUpgradeHook:
