@@ -1,8 +1,8 @@
 openebs-crds:
   csi:
     volumeSnapshots:
-      enabled: true
-      keep: true
+      enabled: false
+      keep: false
 
 # Refer to https://github.com/openebs/dynamic-localpv-provisioner/blob/v4.1.2/deploy/helm/charts/values.yaml for complete set of values.
 localpv-provisioner:
