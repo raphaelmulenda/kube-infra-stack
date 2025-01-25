@@ -7,13 +7,13 @@ openebs-crds:
 # Refer to https://github.com/openebs/dynamic-localpv-provisioner/blob/v4.1.2/deploy/helm/charts/values.yaml for complete set of values.
 localpv-provisioner:
   rbac:
-    create: true
+    create: false
 
 # Refer to https://github.com/openebs/zfs-localpv/blob/v2.6.2/deploy/helm/charts/values.yaml for complete set of values.
 zfs-localpv:
   crds:
     zfsLocalPv:
-      enabled: true
+      enabled: false
     csi:
       volumeSnapshots:
         enabled: false
@@ -22,7 +22,7 @@ zfs-localpv:
 lvm-localpv:
   crds:
     lvmLocalPv:
-      enabled: true
+      enabled: false
     csi:
       volumeSnapshots:
         enabled: false
@@ -39,7 +39,7 @@ mayastor:
   localpv-provisioner:
     enabled: false
   crds:
-    enabled: false
+    enabled: true
 
 # -- Configuration options for pre-upgrade helm hook job.
 preUpgradeHook:
@@ -56,9 +56,9 @@ preUpgradeHook:
 engines:
   local:
     lvm:
-      enabled: true
+      enabled: false
     zfs:
-      enabled: true
+      enabled: false
   replicated:
     mayastor:
       enabled: true
