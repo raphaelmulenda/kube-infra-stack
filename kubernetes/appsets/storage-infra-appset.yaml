@@ -10,10 +10,10 @@ spec:
           - clusters: {}
           - list:
               elements:
-                - appName: ceph-sci
-                  namespace: ceph-csi-rbd
-                  path: kubernetes/apps/ceph/ceph-csi/charts/ceph-csi-rbd
-                  type: helm
+                # - appName: ceph-sci
+                #   namespace: ceph-csi-rbd
+                #   path: kubernetes/apps/ceph/ceph-csi/charts/ceph-csi-rbd
+                #   type: helm
                 - appName: openebs
                   namespace: openebs
                   path: kubernetes/apps/openebs
