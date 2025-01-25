@@ -1,6 +1,6 @@
 crds:
   # -- Disables the installation of all CRDs if set to false
-  enabled: true
+  enabled: false
   csi:
     volumeSnapshots:
       # -- Install Volume Snapshot CRDs
@@ -825,7 +825,7 @@ storageClass:
 
 localpv-provisioner:
   # -- Enables the openebs dynamic-localpv-provisioner. If disabled, modify etcd and loki-stack storage class accordingly.
-  enabled: true
+  enabled: false
   hostpathClass:
     # -- Enable default hostpath localpv StorageClass.
     enabled: false
