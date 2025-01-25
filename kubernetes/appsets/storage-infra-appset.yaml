@@ -33,7 +33,7 @@ spec:
         helm:
           releaseName: "{{appName}}"
           valueFiles:
-            - "{{path}}/values.yaml" 
+            - kubernetes/apps/openebs/values.yaml
       destination:
         name: "{{name}}"
         namespace: "{{namespace}}"
