@@ -18,10 +18,10 @@ spec:
                 #   namespace: openebs
                 #   path: kubernetes/apps/openebs
                 #   type: helm
-                # - appName: longhorn
-                #   namespace: longhorn-system
-                #   path: kubernetes/apps/longhorn
-                #   type: helm                
+                - appName: longhorn
+                  namespace: longhorn-system
+                  path: kubernetes/apps/longhorn
+                  type: helm                
 
   template:
     metadata:
