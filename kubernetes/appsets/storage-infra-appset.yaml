@@ -14,10 +14,14 @@ spec:
                 #   namespace: ceph-csi-rbd
                 #   path: kubernetes/apps/ceph/ceph-csi/charts/ceph-csi-rbd
                 #   type: helm
-                - appName: openebs
-                  namespace: openebs
-                  path: kubernetes/apps/openebs
-                  type: helm
+                # - appName: openebs
+                #   namespace: openebs
+                #   path: kubernetes/apps/openebs
+                #   type: helm
+                - appName: longhorn
+                  namespace: longhorn-system
+                  path: kubernetes/apps/longhorn
+                  type: helm                
 
   template:
     metadata:
