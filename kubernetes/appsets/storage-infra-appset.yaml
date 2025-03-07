@@ -22,7 +22,10 @@ spec:
                   namespace: longhorn-system
                   path: kubernetes/apps/longhorn
                   type: helm                
-
+                - appName: harbor
+                  namespace: harbor
+                  path: kubernetes/apps/harbor
+                  type: helm   
   template:
     metadata:
       name: "{{appName}}"
